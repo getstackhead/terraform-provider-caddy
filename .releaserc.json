@@ -6,7 +6,7 @@
       "@semantic-release/github",
       {
         "assets": [
-          {"path": "dist/terraform-provider-nginx", "label": "Provider binary"}
+          {"path": "dist/terraform-provider-caddy", "label": "Provider binary"}
         ]
       }
     ]
