@@ -38,7 +38,10 @@ jobs:
 
       - name: Build
         working-directory: src
-        run: go build -o ../dist/terraform-provider-caddy .
+        run: GOOS=linux go build -ldflags="-s -w" -o ../dist/terraform-provider-caddy .
+
+      - name: Reduce Go binary
+        run: sudo apt-get install -y upx && upx --brute dist/terraform-provider-caddy
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
